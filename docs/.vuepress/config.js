@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Hello VuePress',
-	description: 'Just playing around',
+  title: '咩屁啊的个人文档',
+	description: '随心所欲',
 	base: '/docs/',
 	themeConfig: {
 		nav: [
@@ -8,8 +8,8 @@ module.exports = {
 			{ text: 'vue', link: '/vue' }
 		],
 		sidebar: [
-      '/docker 安装',
-      '/Docker安装Jenkins'
+			'/docker 安装',
+			'/Docker安装Jenkins'
 		],
 		lastUpdated: 'Last Updated'
 	}
