@@ -1,3 +1,5 @@
+# 上传git前自动执行lint
+
 ## package.json
 ```json
 "devDependencies": {

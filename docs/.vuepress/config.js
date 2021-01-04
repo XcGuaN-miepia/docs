@@ -5,12 +5,14 @@ module.exports = {
 	themeConfig: {
 		nav: [
 			{ text: '首页', link: '/' },
-			{ text: 'vue', link: '/vue' }
+			{ text: 'node', link: '/node/' }
 		],
-		sidebar: [
-			'/docker 安装',
-			'/Docker安装Jenkins'
-		],
-		lastUpdated: 'Last Updated'
+		sidebar: {
+			'/node/': [{
+				title: 'git',
+				children: ['', 'git-lint']
+			}]
+		},
+		lastUpdated: '上次更新'
 	}
 }
