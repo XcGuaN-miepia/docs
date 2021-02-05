@@ -43,6 +43,19 @@ $ git branch -a # 本地 + 远程分支
 $ git branch <分支名> # 停留在当前分支
 $ git checkout -b <分支名> # 切换到新分支
 ```
+### 拉取分支
+```shell
+$ git pull
+```
+### 拉取远程分支
+```shell
+$ git fetch origin <远程分支名>
+$ git checkout -b <本地分支名> origin/<远程分支名> # 在本地创建分支，并将远程分支的信息同步到本地分支
+```
+### 拉取其他远程分支
+```shell
+$ git merge <拉取分支名>
+```
 ### 删除本地分支
 ```shell
 $ git branch -d <分支名> # 没有合并需要强制删除改为-D
