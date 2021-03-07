@@ -14,11 +14,5 @@
   "license": "ISC",
   "devDependencies": {
     "vuepress": "^1.7.1"
-  },
-  "dependencies": {
-    "yorkie": "^2.0.0"
-  },
-  "gitHooks": {
-    "pre-push": "bash deploy.sh"
   }
 }

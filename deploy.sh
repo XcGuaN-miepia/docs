@@ -1,14 +1,14 @@
 #!/usr/bin/env sh
-# 确保提交分支为master分支
-branch=$(git rev-parse --symbolic --abbrev-ref HEAD)
-echo "======= start ======="
-if [ "$branch" != "master" ]
-then
-  echo 'NOT MASTER'
-  exit 0
-fi
+# # 确保提交分支为master分支
+# branch=$(git rev-parse --symbolic --abbrev-ref HEAD)
+# echo "======= start ======="
+# if [ "$branch" != "master" ]
+# then
+#   echo 'NOT MASTER'
+#   exit 0
+# fi
 
-echo "======= end ======="
+# echo "======= end ======="
 # 确保脚本抛出遇到的错误
 set -e
 
