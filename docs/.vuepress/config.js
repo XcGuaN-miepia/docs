@@ -7,6 +7,7 @@ module.exports = {
 			{ text: '首页', link: '/' },
 			{ text: 'node', link: '/node/git' },
 			{ text: '服务器', link: '/server/docker/docker-install' },
+			{ text: '编辑器', link: '/vscode/plugin' },
 			{ text: 'Github', link: 'https://github.com/XcGuaN-miepia/docs' }
 		],
 		sidebar: {
@@ -20,7 +21,11 @@ module.exports = {
 			}, {
 				title: 'nginx',
 				children: ['nginx/nginx-install']
-			}, 'server-no-password']
+			}, 'server-no-password'],
+			'/vscode/': [{
+				title: 'VSCode',
+				children: ['plugin']
+			}]
 		},
 		lastUpdated: '上次更新'
 	}
