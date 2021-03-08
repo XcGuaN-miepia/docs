@@ -29,12 +29,10 @@ jobs:
          npm install # 安装第三方依赖
          npm run docs:build # 打包
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@master
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-         GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
-         BRANCH: gh-pages # The branch the action should deploy to.
-         FOLDER: docs/.vuepress/dist # The folder the action should deploy
-     
+          branch: gh-pages # The branch the action should deploy to.
+          folder: docs/.vuepress/dist # The folder the action should deploy.
 
 
 
