@@ -31,7 +31,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@master
         with:
-         GITHUB_TOKEN: ${{ secrets.ActionsToken }}
+         GITHUB_TOKEN: ${{ secrets.ACTIONSTOKEN }}
          BRANCH: gh-pages # The branch the action should deploy to.
          FOLDER: docs/.vuepress/dist # The folder the action should deploy
      
