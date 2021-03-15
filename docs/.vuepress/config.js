@@ -12,7 +12,7 @@ module.exports = {
 		sidebar: {
 			'/node/': [{
 				title: 'git',
-				children: ['git', 'git-lint']
+				children: ['git', 'git-lint', 'deploy']
 			}],
 			'/server/': [{
 				title: 'docker',
