@@ -13,7 +13,7 @@ module.exports = {
 		sidebar: {
 			'/vue/': [{
 				title: 'vue自定义指令',
-				children: ['directive/highlight', 'directive/ellipsis, directive/input2label']
+				children: ['directive/highlight', 'directive/ellipsis', 'directive/input2label']
 			}],
 			'/node/': [{
 				title: 'git',
