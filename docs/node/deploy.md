@@ -36,6 +36,8 @@ $ npm install --save-dev yorkie
 
 `Jenkins`作为`CI/CD`最常用到的工具，这次用的不是他，虽然也能做到同样的操作，但是如果之前没有部署过`Jenkins`，为了一篇文档去部署显得有些多余了。恰巧我正好研究了下`github`，所以用了他的`Actions`
 
+(ps: Actions有时候会冒雷，今天编译了40分钟才通过 2021年05月18日)
+
 ### 添加Actions
 
 在项目中添加`.github/workflows/deploy.yml`文件
@@ -45,7 +47,7 @@ $ npm install --save-dev yorkie
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:

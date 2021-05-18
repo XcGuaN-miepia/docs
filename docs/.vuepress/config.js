@@ -21,6 +21,9 @@ module.exports = {
 			'/node/': [{
 				title: 'git',
 				children: ['git', 'git-lint', 'deploy']
+			}, {
+				title: 'vscode',
+				children: ['vscode/vetur']
 			}],
 			'/server/': [{
 				title: 'docker',
