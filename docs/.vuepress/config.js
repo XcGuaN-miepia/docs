@@ -14,6 +14,9 @@ module.exports = {
 			'/vue/': [{
 				title: 'vue自定义指令',
 				children: ['directive/highlight', 'directive/ellipsis', 'directive/input2label']
+			}, {
+				title: 'vue-ts',
+				children: ['ts/vue-ts-start']
 			}],
 			'/node/': [{
 				title: 'git',
