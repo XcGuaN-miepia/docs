@@ -1,3 +1,4 @@
+# Docker 安装 Jenkins
 ## 下载 Jenkins
 从[官网地址](https://www.jenkins.io/download/)进入，在下载的选项当中点击`Docker`,就会跳转到`Docker Hub`，或者直接在服务器当中输入命令
 ```shell
@@ -45,33 +46,33 @@ $ docker run \
 
 运行完成之后，没有其他报错显示一串字符后，在浏览器中输入地址，端口号为 22222，进入后可以看到要输入密码
 
-![image1](Docker安装Jenkins.assets/image1.png)
+![image1](./docker-install-jenkins.assets/image1.png)
 
 查看密码的两种方式
 
 1. ```shell
    miepiadeMacBook-Pro:~ xcguan$ docker logs 1fc8c3 # 1fc8c3 是我 docker 镜像的 id，其实没有别的镜像只输第一个字也可以
-   
+
    Running from: /usr/share/jenkins/jenkins.war
    省略......
-   
+
    *************************************************************
    *************************************************************
    *************************************************************
-   
+
    Jenkins initial setup is required. An admin user has been created and a password generated.
    Please use the following password to proceed to installation:
-   
+
    # 在这边的就是密码，战术打码#
-   
+
    This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
-   
+
    *************************************************************
    *************************************************************
    *************************************************************
-   
+
    省略......
-   
+
    ```
 
 2. ```shell
@@ -82,9 +83,9 @@ $ docker run \
 
     输入后直接点击安装推荐插件，更加方便
 
-   
 
-![image2](Docker安装Jenkins.assets/image2.png)
+
+![image2](./docker-install-jenkins.assets/image2.png)
 
 安装完成后，就是一些配置信息和账号注册，跳过或者默认都是可以的
 
@@ -108,42 +109,42 @@ https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json
 
 进入全局配置工具，在`NodeJs`项下点击`新增NodeJS`，填了别名之后点击保存，另外`Node`版本不要选择太高，本人选择的是 10.13.0
 
-![image3](Docker安装Jenkins.assets/image3.png)
+![image3](./docker-install-jenkins.assets/image3.png)
 
 #### 构建配置
 
 点击新建任务，输入任务名称，选择构建一个自由风格的软件项目，再点击确定
 
-![image4](Docker安装Jenkins.assets/image4.png)
+![image4](./docker-install-jenkins.assets/image4.png)
 
 源码管理中选择`Git`，输入仓库地址，在`Credentials`下面点击添加
 
-![image5](Docker安装Jenkins.assets/image5.png)
+![image5](./docker-install-jenkins.assets/image5.png)
 
 输入你的`git`用户名密码即可，然后点击添加，添加后`Credentials`下选择你新添加的凭证即可，下面的指定分支先填写`${branch}`，下一步有作用，如果不喜欢这个名字可以根据下一步修改
 
-![image6](Docker安装Jenkins.assets/image6.png)
+![image6](./docker-install-jenkins.assets/image6.png)
 
 再回到上面，参数化构建过程打钩选上，添加参数 点击 Git 参数，这个选项必须安装上面提到的`Git Parameter`插件才有
 
-![image7](Docker安装Jenkins.assets/image7.png)
+![image7](./docker-install-jenkins.assets/image7.png)
 
 在名称填写 `branch`或者喜欢的名字，参数类型选择`分支`，默认值填写`origin/master`
 
-![image8](Docker安装Jenkins.assets/image8.png)
+![image8](./docker-install-jenkins.assets/image8.png)
 
 再在构建环境当中，勾选`Provide Node & npm bin/ folder to PATH`
 
-![image9](Docker安装Jenkins.assets/image9.png)
+![image9](./docker-install-jenkins.assets/image9.png)
 
 最后在构建当中选择`执行shell`
 
-![image10](Docker安装Jenkins.assets/image10.png)
+![image10](./docker-install-jenkins.assets/image10.png)
 
 在命令里面输入
 
 ```shell
-npm install 
+npm install
 rm -rf ./dist/*
 npm run build
 rm -rf /[自定义Jenkins数据卷地址]/*

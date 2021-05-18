@@ -18,7 +18,7 @@ $ vue create vue-ts
 ? Pick a linter / formatter config: Standard
 ? Pick additional lint features: Lint on save, Lint and fix on commit
 ? Where do you prefer placing config for Babel, ESLint, etc.? In dedicated config files
-? Save this as a preset for future projects? (y/N) 
+? Save this as a preset for future projects? (y/N)
 ```
 
 目录结构
