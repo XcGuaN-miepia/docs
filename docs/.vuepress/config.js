@@ -23,7 +23,7 @@ module.exports = {
 				children: ['git', 'git-lint', 'deploy']
 			}, {
 				title: 'vscode',
-				children: ['vscode/vetur']
+				children: ['vscode/vetur', 'vscode/fileheader']
 			}],
 			'/server/': [{
 				title: 'docker',

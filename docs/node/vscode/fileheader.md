@@ -1,3 +1,4 @@
+# fileheader
 ## 前言
 很早之前其实用过这款插件，里面功能其实还挺多的，但是跟我们团队的注释方法有些差异，所以我放弃了这款插件。这次回过头来看，有推荐使用的意思
 
@@ -61,9 +62,9 @@
 当你生成方法注释的时候，默认的样式为
 ```
 /**
- * @description: 
- * @param {type} 
- * @return {type} 
+ * @description:
+ * @param {type}
+ * @return {type}
  */
 ```
 
