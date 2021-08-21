@@ -27,7 +27,7 @@ module.exports = {
 			}],
 			'/server/': [{
 				title: 'docker',
-				children: ['docker/docker-install', 'docker/docker-install-jenkins']
+				children: ['docker/docker-install', 'docker/docker-install-jenkins', 'docker/docker-install-nginx']
 			}, {
 				title: 'nginx',
 				children: ['nginx/nginx-install']
