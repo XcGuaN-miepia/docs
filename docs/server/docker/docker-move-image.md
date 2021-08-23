@@ -71,3 +71,17 @@ $ docker run \
   nginx-web:0.1 \ # 镜像名称:镜像TAG
   /docker-entrypoint.sh nginx -g 'daemon off;' # 启动参数，必填，为之前容器的COMMAND
 ```
+
+## Docker Load Save
+
+### Save
+
+```shell
+$ docker save nginx > nginx-web2.tar
+```
+
+### Load
+
+```shell
+$ docker load < nginx-web2.tar
+```
