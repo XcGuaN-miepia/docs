@@ -1,5 +1,5 @@
-# Docker 安装 Jenkins
-## 下载 Jenkins
+# Docker安装Jenkins
+## 下载Jenkins
 从[官网地址](https://www.jenkins.io/download/)进入，在下载的选项当中点击`Docker`,就会跳转到`Docker Hub`，或者直接在服务器当中输入命令
 ```shell
 $ docker pull jenkins/jenkins
@@ -14,7 +14,7 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 jenkins/jenkins     latest              13e2b551515d        6 days ago          717MB
 ```
 
-## 运行 Jenkins
+## 运行Jenkins
 ```shell
 $ docker run \
   -u root \
