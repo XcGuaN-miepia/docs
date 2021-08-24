@@ -97,3 +97,8 @@ $ docker run \
   nginx-web:0.1 \ # 镜像名称:镜像TAG
   /docker-entrypoint.sh nginx -g 'daemon off;' # 启动参数，必填，为之前容器的COMMAND
 ```
+
+## Save和Export区别
+
+1. export导出的镜像文件大小小于save保存的镜像
+2. export 导出（import导入）是根据容器拿到的镜像，再导入时会丢失镜像所有的历史，所以无法进行回滚操作（docker tag <LAYER ID> <IMAGE NAME>）；而save保存（load加载）的镜像，没有丢失镜像的历史，可以回滚到之前的层（layer）。
