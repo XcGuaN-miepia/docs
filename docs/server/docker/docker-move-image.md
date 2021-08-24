@@ -59,7 +59,33 @@ REPOSITORY                     TAG                 IMAGE ID            CREATED  
 nginx-web                      0.1                 9b947e4f51fd        8 minutes ago       132MB
 ```
 
-### 运行镜像
+## Docker Load Save
+
+可以使用`commit`命令将现在已经存在的容器打包成镜像
+
+```shell
+$ docker commit 2068543cf2f2 nginx-web2 # docker commit [容器ID] [镜像名称]
+```
+
+再使用`docker images`查看镜像列表
+
+### Save
+
+将镜像保存下来
+
+```shell
+$ docker save nginx-web2 > nginx-web2.tar
+```
+
+### Load
+
+将镜像重新加载
+
+```shell
+$ docker load < nginx-web2.tar
+```
+
+## 运行镜像
 
 因为只是一个镜像，之前设置的端口，挂载目录还需要重新设置
 
@@ -70,18 +96,4 @@ $ docker run \
   -v /opt/nginx-html:/usr/share/nginx/html:ro \ # 挂载数据卷
   nginx-web:0.1 \ # 镜像名称:镜像TAG
   /docker-entrypoint.sh nginx -g 'daemon off;' # 启动参数，必填，为之前容器的COMMAND
-```
-
-## Docker Load Save
-
-### Save
-
-```shell
-$ docker save nginx > nginx-web2.tar
-```
-
-### Load
-
-```shell
-$ docker load < nginx-web2.tar
 ```
