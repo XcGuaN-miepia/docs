@@ -8,7 +8,7 @@
     
     <meta name="description" content="随心所欲">
     
-    <link rel="preload" href="/docs/assets/css/0.styles.52bb2005.css" as="style"><link rel="preload" href="/docs/assets/js/app.cc10d46b.js" as="script"><link rel="preload" href="/docs/assets/js/2.818809dd.js" as="script"><link rel="preload" href="/docs/assets/js/15.b2f40715.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.b638b6ef.js"><link rel="prefetch" href="/docs/assets/js/11.d70988c0.js"><link rel="prefetch" href="/docs/assets/js/12.f0325e6f.js"><link rel="prefetch" href="/docs/assets/js/13.b9440370.js"><link rel="prefetch" href="/docs/assets/js/14.8e9bdad5.js"><link rel="prefetch" href="/docs/assets/js/16.3857e952.js"><link rel="prefetch" href="/docs/assets/js/17.aebe0b92.js"><link rel="prefetch" href="/docs/assets/js/18.7a1c2e45.js"><link rel="prefetch" href="/docs/assets/js/19.5d182557.js"><link rel="prefetch" href="/docs/assets/js/20.b8469d2b.js"><link rel="prefetch" href="/docs/assets/js/21.a2fb0bf5.js"><link rel="prefetch" href="/docs/assets/js/22.c5b78947.js"><link rel="prefetch" href="/docs/assets/js/3.b4aee4bb.js"><link rel="prefetch" href="/docs/assets/js/4.62957b5c.js"><link rel="prefetch" href="/docs/assets/js/5.4d7e8ade.js"><link rel="prefetch" href="/docs/assets/js/6.cdafc2d5.js"><link rel="prefetch" href="/docs/assets/js/7.1ce9cf33.js"><link rel="prefetch" href="/docs/assets/js/8.0688a0fe.js"><link rel="prefetch" href="/docs/assets/js/9.c92472e9.js">
+    <link rel="preload" href="/docs/assets/css/0.styles.52bb2005.css" as="style"><link rel="preload" href="/docs/assets/js/app.692687db.js" as="script"><link rel="preload" href="/docs/assets/js/2.818809dd.js" as="script"><link rel="preload" href="/docs/assets/js/15.d421b732.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.c2cf2053.js"><link rel="prefetch" href="/docs/assets/js/11.d70988c0.js"><link rel="prefetch" href="/docs/assets/js/12.084baa83.js"><link rel="prefetch" href="/docs/assets/js/13.cac703a1.js"><link rel="prefetch" href="/docs/assets/js/14.e968f719.js"><link rel="prefetch" href="/docs/assets/js/16.942ec7f5.js"><link rel="prefetch" href="/docs/assets/js/17.a060f44e.js"><link rel="prefetch" href="/docs/assets/js/18.c2767a3f.js"><link rel="prefetch" href="/docs/assets/js/19.1c9559a2.js"><link rel="prefetch" href="/docs/assets/js/20.9134981f.js"><link rel="prefetch" href="/docs/assets/js/21.fcaf3e2a.js"><link rel="prefetch" href="/docs/assets/js/22.c5b78947.js"><link rel="prefetch" href="/docs/assets/js/3.36e13da5.js"><link rel="prefetch" href="/docs/assets/js/4.62957b5c.js"><link rel="prefetch" href="/docs/assets/js/5.4d7e8ade.js"><link rel="prefetch" href="/docs/assets/js/6.cdafc2d5.js"><link rel="prefetch" href="/docs/assets/js/7.7b2acb47.js"><link rel="prefetch" href="/docs/assets/js/8.0688a0fe.js"><link rel="prefetch" href="/docs/assets/js/9.c92472e9.js">
     <link rel="stylesheet" href="/docs/assets/css/0.styles.52bb2005.css">
   </head>
   <body>
@@ -41,7 +41,7 @@
     <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
       <span class="token punctuation">-</span> /opt/nginx<span class="token punctuation">-</span>html<span class="token punctuation">:</span>/usr/share/nginx/html<span class="token punctuation">:</span>ro <span class="token comment"># 数据卷挂载，前面为本机目录，后面为容器地址，挂载后可以在本机目录编辑文件,:ro为容器只读文件，不可以处理文件</span>
 </code></pre></div><h3 id="_2、使用docker-compose安装"><a href="#_2、使用docker-compose安装" class="header-anchor">#</a> 2、使用docker-compose安装</h3> <p>因为我使用的都是绝对路径，所以在服务器上位置也不用太在意，安装完后就可以删除，随便放了一个目录。</p> <p>在目录路径下使用命令安装文件</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ docker-compose up -d
-</code></pre></div><p>[-d]的意思是在后台运行，如果不需要可以去掉。</p> <p>一般情况下，在安装完成后输入地址能访问，但是我挂载目录没有放文件所以直接403，也懒得搞了，能知道怎么弄就行</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">8/24/2021, 3:23:39 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div><p>[-d]的意思是在后台运行，如果不需要可以去掉。</p> <p>一般情况下，在安装完成后输入地址能访问，但是我挂载目录没有放文件所以直接403，也懒得搞了，能知道怎么弄就行</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">8/24/2021, 3:35:53 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
       <a href="/docs/server/docker/docker-install-jenkins.html" class="prev">
         Docker安装Jenkins
@@ -50,6 +50,6 @@
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/docs/assets/js/app.cc10d46b.js" defer></script><script src="/docs/assets/js/2.818809dd.js" defer></script><script src="/docs/assets/js/15.b2f40715.js" defer></script>
+    <script src="/docs/assets/js/app.692687db.js" defer></script><script src="/docs/assets/js/2.818809dd.js" defer></script><script src="/docs/assets/js/15.d421b732.js" defer></script>
   </body>
 </html>
