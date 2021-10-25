@@ -67,14 +67,18 @@ $ npm init vite@latest main-app --template vue
 $ npm init vite@latest micro-app --template vue
 ```
 
-### 安装依赖
+### 添加.gitignore
 
 在根目录新建`.gitignore`，添加`node_modules`
+
+### 安装依赖
 
 ```shell
 $ cd ../ # 回到根目录
 $ yarn install # 安装依赖
 ```
+
+安装完成后，会发现`node_modules`不是安装在各个项目包当中，而是在我们的根目录当中，并且在项目包中的`node_modules`里面也没有文件
 
 ### 启动项目
 
@@ -116,6 +120,35 @@ plugins: [
 ```
 
 其中`mirco-app`为主应用在注册时候使用的名称，需要保持一致
+
+调整路由
+
+```js
+import * as VueRouter from 'vue-router'
+
+const routes = [{
+  path: '/test1',
+  component: () => import('../views/test1/index.vue'),
+}, {
+  path: '/test2',
+  component: () => import('../views/test2/index.vue'),
+}]
+
+const router = VueRouter.createRouter({
+  history: VueRouter.createWebHistory('/mirco-app'),
+  routes
+})
+
+export default router
+```
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+
+createApp(App).use(router).mount('#app')
+```
 
 ### 主应用修改
 
@@ -180,36 +213,105 @@ export default defineComponent({
 
 ```
 
+将主应用的id改为`#main-app`，避免和微应用的id冲突
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="main-app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
 
+```
 
+顺便把路由加上
 
+```js
+import * as VueRouter from 'vue-router'
+import Home from '../App.vue'
 
+const routes:VueRouter.RouteRecordRaw[] = [{
+  path: '/:pathMatch(.*)*',
+  component: Home
+}]
 
+const router = VueRouter.createRouter({
+  history: VueRouter.createWebHistory(),
+  routes
+})
 
+export default router
+```
 
-之后在两个应用当中，都初始化vue3项目。
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
 
-在最外层项目当中的`package.json`当中，添加一条`script`
+createApp(App).use(router).mount('#main-app')
+
+```
+
+在`App.vue`文件当中修改，切换按钮加载不同的路由，并且挂载新写的组件
+
+```vue
+<script setup lang="ts">
+// This starter template is using Vue 3 <script setup> SFCs
+// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+import { useRouter } from 'vue-router';
+import MicroAppView from './components/micro-app-view/index.vue'
+
+let entry = ''
+const router = useRouter()
+
+function changeEntry(val: string) {
+  entry = val
+  router.push(val)
+}
+</script>
+
+<template>
+  <button @click="changeEntry('test1')">test1</button>
+  <button @click="changeEntry('test2')">test2</button>
+  <MicroAppView :config="{ name: 'admin', entry: `//localhost:3001/${entry}`, activeRule: '/' }"></MicroAppView>
+</template>
+
+<style>
+#main-app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
+
+```
+
+### 启动服务
+
+将命令直接加在根目录的`package.json`当中
 
 ```json
 "scripts": {
-  "install-all": "npm install --prefix apps/*"
+  "server": "lerna exec npm run dev"
 },
 ```
 
-这段命令的意思就是在`apps/*`下的所有文件夹都去安装依赖，同理我们也可以写同时运行的命令
+执行命令后，点击按钮即可切换页面
 
-```json
-"scripts": {
-  "install-all": "npm install --prefix apps/*"
-  "server-all": "npm run dev --prefix apps/*"
-},
-```
+[项目地址](https://github.com/XcGuaN-miepia/vue-vite-qiankun-demo)
 
-但是想法想的很好，实际上这样完全不行，启的地址是一个访问报错的地址，所以得用到`concurrently`启动多进程去启动。
 
-首先就是启动服务的命令得写多个而不是单个了
 
 
 

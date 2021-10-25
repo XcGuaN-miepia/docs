@@ -17,6 +17,9 @@ module.exports = {
 			}, {
 				title: 'vue-ts',
 				children: ['ts/vue-ts-start']
+			}, {
+				title: 'qiankun',
+				children: ['qiankun/Vue3+Vite+qiankun']
 			}],
 			'/node/': [{
 				title: 'git',
