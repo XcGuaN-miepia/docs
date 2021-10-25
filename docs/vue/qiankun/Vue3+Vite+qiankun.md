@@ -2,7 +2,7 @@
 
 ## 新建项目
 
-由于在demo当中进行开发，所以就将所有项目放在一个文件夹当中进行处理。但是项目如果多了起来，每一个项目都要去安装启动，这就是一件很麻烦的事情，所以使用了`lerna`统一去进行管理
+由于在demo当中进行开发，所以就将所有项目放在一个文件夹中进行处理。但是项目如果多了起来，每一个项目都要去安装启动，这就是一件很麻烦的事情，`lenra`就是处理这种问题而出现的。
 
 ### lerna介绍
 
@@ -59,7 +59,7 @@ $ lerna init
 
 ### 初始化主应用和微应用
 
-在`packages`文件夹初始化`main-app`和`micro-app`的`Vue`项目
+在`packages`文件夹初始化`main-app`和`micro-app`这两个`Vue`项目
 
 ```shell
 $ cd ./packages
@@ -100,7 +100,7 @@ $ lerna add qiankun
 
 ### 单独添加
 
-由于`qiankun`和`vite`有部分冲突，微应用的`vite`的开发模式`qiankun`不能正确的导入进来，所以需要一个`vite-plugin-qiankun`插件
+由于`qiankun`和`vite`有部分冲突，在微应用的`vite`开发模式下`qiankun`不能正确的导入进来，所以需要一个`vite-plugin-qiankun`插件
 
 ```shell
 $ lerna add vite-plugin-qiankun packages/micro-app -D
@@ -135,7 +135,7 @@ const routes = [{
 }]
 
 const router = VueRouter.createRouter({
-  history: VueRouter.createWebHistory('/mirco-app'),
+  history: VueRouter.createWebHistory('/mirco-app'), // 是createWebHistory
   routes
 })
 
@@ -152,7 +152,7 @@ createApp(App).use(router).mount('#app')
 
 ### 主应用修改
 
-写了一个加载子应用的一个组件
+创建一个加载子应用的一个组件
 
 ```vue
 <template>
@@ -213,7 +213,7 @@ export default defineComponent({
 
 ```
 
-将主应用的id改为`#main-app`，避免和微应用的id冲突
+将主应用的id改为`main-app`，避免和微应用的id冲突
 
 ```html
 <!DOCTYPE html>
@@ -238,7 +238,7 @@ export default defineComponent({
 import * as VueRouter from 'vue-router'
 import Home from '../App.vue'
 
-const routes:VueRouter.RouteRecordRaw[] = [{
+const routes = [{
   path: '/:pathMatch(.*)*',
   component: Home
 }]
@@ -281,7 +281,8 @@ function changeEntry(val: string) {
 <template>
   <button @click="changeEntry('test1')">test1</button>
   <button @click="changeEntry('test2')">test2</button>
-  <MicroAppView :config="{ name: 'admin', entry: `//localhost:3001/${entry}`, activeRule: '/' }"></MicroAppView>
+  <MicroAppView :config="{ name: 'mirco-app', entry: `//localhost:3001/${entry}`, activeRule: '/' }"></MicroAppView>
+  <!-- mirco-app 是子应用的name，在vite-plugin-qiankun当中定义 -->
 </template>
 
 <style>
