@@ -34,7 +34,10 @@ module.exports = {
 			}, {
 				title: 'nginx',
 				children: ['nginx/nginx-install']
-			}, 'server-no-password']
+			}, {
+				title: 'NAS',
+				children: ['nas/use-infuse.md']
+			},'server-no-password']
 		},
 		lastUpdated: '上次更新'
 	}
